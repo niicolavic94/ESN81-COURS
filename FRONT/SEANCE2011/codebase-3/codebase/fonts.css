@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+    font-family: "Coolvetica-condensed";
+    src: url("fonts/coolvetica/Coolvetica-Cond.woff2") format("woff2"),
+    url("fonts/coolvetica/Coolvetica-Cond.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

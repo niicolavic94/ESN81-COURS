@@ -1,0 +1,275 @@
+html {
+  font-size: 62.5%;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #303e1b;
+}
+
+h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+header#header {
+  h1 {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+main#main {
+  > section {
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+
+  /* --- Section Agenda --- */
+  #agenda {
+    background-color: #cfe277;
+    border-top: 1px solid #cfe277;
+
+    div.intro {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        padding: 2rem;
+        border-bottom: 1px solid #fda959;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .date {
+          font-weight: bold;
+          color: #bb5c02;
+        }
+
+        .title {
+          font-weight: bold;
+          margin-left: 2rem;
+        }
+
+        .description {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
+  /* --- Section Courses --- */
+  #courses {
+    background-color: #edf4cb;
+    border-top: 1px solid #edf4cb;
+    color: #4c622a;
+
+    h3 + ul {
+      margin-top: 4rem;
+    }
+
+    ul {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding-left: 0;
+
+      li {
+        box-sizing: border-box;
+        padding: 2rem;
+        background-color: #cfe277;
+        border: 1px solid #cfe277;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .course {
+          font-weight: bold;
+          display: block;
+          color: #303e1b;
+          font-size: 1.1em;
+          margin-bottom: 0.5rem;
+        }
+
+        .teachers, .duration, .conditions, .tarif {
+          display: block;
+        }
+
+        .conditions {
+          font-style: italic;
+          font-size: 0.9em;
+        }
+
+        .tarif {
+          text-align: right;
+          margin-top: auto;
+          padding-top: 1rem;
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+
+  /* --- Section Teachers --- */
+  #teachers {
+    background-color: #f4f8e0;
+    border-top: 1px solid #f4f8e0;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding-left: 0;
+
+      li {
+        flex: 1;
+        flex-basis: 100%;
+        padding: 1rem;
+
+        img {
+          height: 150px;
+          width: 150px;
+          margin: 0 auto;
+          border-radius: 50%;
+          display: block;
+        }
+
+        .name {
+          font-size: 0.9em;
+          font-weight: bold;
+          text-align: center;
+          display: block;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  /* --- Section Tarifs --- */
+  #tarifs {
+    div.docs {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 1rem;
+
+          a {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #ed7503;
+
+            i {
+              margin-right: 0.5rem;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --- Footer --- */
+footer#footer {
+  section {
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+
+  #partners {
+    background-color: #edf4cb;
+    border-top: 1px solid #edf4cb;
+  }
+
+  #contact {
+    background-color: #cfe277;
+    border-top: 1px solid #cfe277;
+  }
+
+  #association {
+    background-color: #adc82b;
+    border-top: 1px solid #adc82b;
+  }
+}
+
+/* --- Media Queries --- */
+@media (min-width: 640px) {
+  section#teachers {
+    ul {
+      li {
+        flex: 1;
+        flex-basis: 25%;
+
+        .name {
+          background-color: #c8dd62;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  section#courses {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      li {
+        padding: 2rem;
+      }
+    }
+
+    h3:first-of-type + ul {
+      li:nth-child(7) {
+        grid-column: span 1;
+      }
+
+      li:nth-child(8) {
+        grid-column: span 2;
+      }
+    }
+
+    h3:nth-of-type(2) + ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  section#courses {
+    ul {
+      gap: 2rem;
+    }
+  }
+}

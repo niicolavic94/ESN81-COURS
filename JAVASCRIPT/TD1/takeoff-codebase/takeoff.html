@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="title">Le téléscope spatial hubble</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li id="expansion">
+                <a href="#">L'expansion de l'Univers</a>
+            </li>
+            <li>
+                <a href="#">La formation des étoiles</a>
+            </li>
+            <li id="trousNoirs" >
+                <a href="#">L'étude des trous noirs</a>
+            </li>
+        </ul>
+    </nav> 
+    
+   <main>
+
+        <figure id="mainPicture" >
+            <img src="hubble-takeoff.jpg" alt="takeoff">
+            <figcaption>La navette Discovery, avec le télescope spatial Hubble dans sa soute, décolle du Centre spatial Kennedy <time>le 24 avril 1990</time> .</figcaption>
+        </figure>
+
+        <section class="text">
+            <article class='bloc first'>
+                <h2>L'expansion de l'Univers</h2>
+                <p class="intro">L'un des objectifs principaux à l'origine de la réalisation du télescope Hubble est la détermination 
+                    de l'âge et de la taille de l'Univers. </p>
+                <p>L'observation des <a class="link" href="https://fr.wikipedia.org/wiki/C%C3%A9ph%C3%A9ide" target="_blank">céphéides</a> — étoiles dont la luminosité varie selon une périodicité directement corrélée à leur luminosité réelle — a permis d'abaisser l'incertitude sur la valeur de la constante de Hubble de 50 à 10 %. Ces résultats ont pu être vérifiés par la suite grâce à des mesures effectuées par d'autres méthodes. Ils ont permis de déterminer que la vitesse d'expansion de l'Univers atteignait 70 km/s/Mpc</p>
+                <a href="#" class="more">Lire la suite</a>
+            </article>    
+
+            <article class='bloc'>
+                <h2>Formation des étoiles</h2>
+                <p class="intro">La capacité de Hubble à <span class="elegant">faire des observations dans l'infrarouge</span> a été largement mise à contribution pour étudier les pouponnières d'étoiles, constituées de nuages de gaz dans lesquels se forment les étoiles. </p>
+                <p>La poussière bloque pratiquement tout le rayonnement en lumière visible mais pas celui émis dans l'infrarouge. Hubble a pu ainsi restituer des images détaillées de <a class="link image" target="_blank" href="https://fr.wikipedia.org/wiki/N%C3%A9buleuse_d%27Orion#/media/Fichier:Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg">la nébuleuse d'Orion</a>, pouponnière située dans la Voie lactée, mais également de régions de formation des étoiles situées à très grande distance de notre galaxie et donc que l'on voit telles qu'elles étaient longtemps dans le passé. Toutes ces informations, outre qu'elles ont fourni les plus belles images de Hubble, ont une grande importance scientifique, car elles ont permis de mieux comprendre le mode de formation des étoiles telles que le Soleil, ainsi que l'évolution dans le temps des caractéristiques de l'Univers.</p>
+                <a href="#" class="more">Lire la suite</a>
+            </article>
+
+            <article class='bloc last'>
+                <h2>Étude des trous noirs</h2>
+                <p class="intro">L'existence des trous noirs est prédite par des théories depuis près de 200 ans, mais il est impossible d'observer directement un tel objet et les astronomes n'avaient aucun moyen de vérifier leur existence jusqu'à l'arrivée de Hubble. </p>
+                <p> Celui-ci a permis d' <span class="elegant">observer l'attraction gravitationnelle</span> sur les objets qui l'entourent. Hubble a également permis de confirmer qu'il était extrêmement probable que des trous noirs supermassifs se trouvent au cœur des galaxies.</p>
+                <a href="#" class="more">Lire la suite</a>
+            </article>
+        </section>
+
+       
+   </main>
+
+   <aside>
+    <form id="newsletter">
+        <h2>Inscription newsletter</h2>
+        <input type="email">
+        <button type="submit">Enregistrer</button>
+    </form>
+   </aside>
+
+   <footer>
+       <section id="links">
+            <p class="contact"><a href="#">Contact</a></p>
+            <p class="source">Source : <a href="https://fr.wikipedia.org/wiki/Hubble_(t%C3%A9lescope_spatial)" class="link">Wikipedia</a></p>
+            <p class="copy">&copy; Les artisans du web</p>
+       </section>
+        
+        <form id="mode">
+            <select name="mode">
+                <option value="light">light</option>
+                <option value="dark">dark</option>
+            </select>
+            <button type="submit">Choisissez votre style</button>
+        </form>
+   </footer>
+
+   <script src="app.js"></script>
+    
+
+</body>
+</html>

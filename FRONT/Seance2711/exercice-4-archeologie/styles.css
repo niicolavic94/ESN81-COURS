@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700'); /* Chargement de la police */
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat */
+    color: #6A6E84;
+}
+/* titres en gras */
+h3 {
+    font-weight: bold;
+}
+
+a {
+    color: #76250C;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #e8bd9c;
+    padding: 0.6em 1em;
+}
+
+.button:hover {
+    background-color: rgb(214, 165, 127);
+}
+
+body > .header {
+    background-color: antiquewhite;
+    padding: 1em 3em;
+    margin-bottom: 2em;
+}
+
+nav.main-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* Hero */
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero .container .button {
+    align-self: end;
+}
+
+/* Prog */
+
+.programme .container {
+    background-color: aliceblue;
+}
+
+.conferences {
+    list-style-type: none;
+}
+
+/* Style par défaut pour les écrans >= 800px */
+.conferences>li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    margin-top:4em;
+}
+
+.conferences>li img {
+    min-width: 300px;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+li.conference .header{
+    display: flex;    
+    justify-content: space-between;
+}
+
+li.conference .header .right{
+    display: flex;
+    align-items: baseline;
+    width: 45%;
+}
+
+/* --- Media Query pour les écrans < 800px --- */
+
+@media screen and (max-width: 800px) {
+    
+ 
+    .conferences>li {
+        display: block; 
+        margin-top: 2em; 
+    }
+
+  
+    .conferences>li img {
+        width: 100%; 
+        min-width: 0;
+        margin: 0 0 1em 0;
+        order: -1;
+    }
+
+   
+    li.conference .header {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    
+   
+    li.conference .header .right {
+        width: 100%;
+        flex-direction: column; 
+        align-items: flex-start;
+        margin-top: 1em; 
+    }
+
+   
+    nav.main-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav.main-menu a {
+        padding: 0.5em 0;
+    }
+}

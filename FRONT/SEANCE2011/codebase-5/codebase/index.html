@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+        :root {
+            
+            --purple-dark-lk:        #2e203a; 
+            --red-lk:                #ff0000;            
+            --yellow-lk:             #f9b520;              
+            --default-transition-duration: 0.3s;
+            
+        }   
+        
+        @font-face {
+            font-family: 'Calibri';
+            font-style:  normal;
+            font-weight: 400;
+         
+            src: url("design/fonts/calibri-regular-webfont.woff2") format("woff2"),
+            url("design/fonts/calibri-regular-webfont.woff") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'Akrobat';
+            font-style:  normal;
+            font-weight: 400;
+          
+            src: url("fonts/akrobat-regular-webfont.woff2") format("woff2"),
+            url("design/fonts/akrobat-regular-webfont.woff") format("woff");
+        }        
+        
+        
+  
+        @font-face {
+            font-family: 'Material Symbols Outlined';;
+            src: url('fonts/material_symbol_outlined.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, dfn, em, img, q, s, strong, sub, sup, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, section, summary, time, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+        
+        html { font-size: 62.5%; }	                
+        
+        body { 
+            font-family: 'Calibri', sans-serif; 
+            font-size: 1.6rem; 
+            line-height: 1.5; 
+            color:white;
+            background-color: var(--purple-dark-lk);
+        }          
+        img {
+            width: 340px;
+            margin:340px;
+        }
+        a {
+           
+        }
+        
+        strong {
+            
+        }
+        
+        p {
+            
+        }          
+        
+        .event-card {
+           
+        }
+        
+        .event-card .event-card-presentation {
+           
+        }
+        
+        .event-card .event-card-presentation figure.event-card-thumbnail {
+            
+        }
+        
+        .event-card .event-card-presentation figure.event-card-thumbnail a {
+            
+        }
+        
+        .event-card .event-card-presentation figure.event-card-thumbnail img {
+           
+        }
+        
+        .event-card .event-card-presentation h3.event-card-title { 
+            color:#f9b520;
+            text-transform: uppercase;
+            font-size: 2rem;
+            
+        }
+        
+        .event-card .event-card-presentation .event-card-artist {
+         color:#f9b520;
+
+        }        
+        
+        .event-card .event-card-infos {
+            
+        }
+        
+        .event-card .event-card-infos .event-card-period{
+            font-size: 2rem;
+        }
+        
+        .event-card .event-card-infos .event-card-period::before {
+            color: var(--yellow-lk);
+            font-family: 'Material Symbols Outlined';
+            content: "\e5e1";
+            font-size: 2rem;
+            font-weight: bold;
+            display: inline-flex;
+            transform: translateX(3px) translateY(3px);
+        }
+        
+        .event-card .event-card-infos .event-card-actions {
+            
+        }  
+        
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap a {
+            
+            
+        }  
+        
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a {
+            background: var(--yellow-lk);
+            border-color: var(--yellow-lk);
+            color: var(--purple-dark-lk);
+            position: relative;
+            padding: 0 16px;
+            border-left: none;
+            border-left-color: currentcolor;
+            border-right: none;
+            border-right-color: currentcolor;
+        }
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a:hover{
+            
+        }        
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a::before, 
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a::after {
+            background: var(--purple-dark-lk);    
+             content: "";
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 10px);
+            transition: var(--default-transition-duration);        
+        }
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a::after {
+            right: -14px;
+        }
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.ticket-link-wrap a::before {
+            left: -14px;
+        }       
+
+        
+        .event-card .event-card-infos .event-card-actions .button-link-wrap.more-link-wrap a:hover{
+            
+        }
+        
+        .event-card .event-card-infos .event-card-actions .event-card-price {
+                       color:#f9b520;
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <main>
+        
+        <article class="event-card  event-card-spectacle spectacle">
+            
+            <div class="event-card-presentation">
+                
+                <header>
+                    
+                    <figure class="event-card-thumbnail">
+                        
+                        <a href="#">
+                            <img src="./img/affiche.jpg">
+                        </a>
+                        
+                    </figure>
+                    
+                    <h3 class="event-card-title js-show">
+                        
+                        <a href="#">
+                            L’affaire est dans le sac
+                        </a>
+                        
+                    </h3>
+                    
+                    <p class="event-card-artist"><strong>Yannick Schiavone</strong></p>
+                    
+                </header>
+                
+            </div>
+            
+            
+            <div class="event-card-infos">
+                
+                <p class="event-card-period">
+                    
+                    Du <time datetime="1761937200">31 octobre</time> au <time datetime="1762023600">1 novembre</time>
+                    
+                </p>
+                
+                <div class="event-card-actions">
+                    
+                    <p class="button-link-wrap more-link-wrap"><a href="#">En savoir plus</a></p>
+                    
+                    <p class="button-link-wrap ticket-link-wrap"><a href="#" target="_blank">Réserver</a></p>
+                    
+                    <p class="event-card-price"><span class="value">18€</span></p>
+                    
+                    
+                </div>
+                
+            </div>
+            
+        </article>
+        
+    </main>
+    
+</body>
+</html>

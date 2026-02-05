@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Risks of Vibe Coding</title>
+        <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react-production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@0.303.0"></script>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+        const { 
+          ChevronLeft, 
+          ChevronRight, 
+          AlertTriangle, 
+          Shield, 
+          Code, 
+          Users, 
+          TrendingUp, 
+          CheckCircle, 
+          XCircle, 
+          Eye, 
+          BookOpen, 
+          Lock 
+        } = lucide;
+
+        const Presentation = () => {
+          const [currentSlide, setCurrentSlide] = useState(0);
+
+          const slides = [
+            // Slide 0: Title
+            {
+              title: "The Risks of 'Vibe Coding'",
+              subtitle: "in Modern Software Development",
+              content: (
+                <div className="flex flex-col items-center justify-center h-full space-y-8">
+                  <div className="text-center">
+                    <div className="inline-block p-6 bg-red-100 rounded-full mb-6">
+                      <AlertTriangle className="w-20 h-20 text-red-600" />
+                    </div>
+                    <h1 className="text-5xl font-bold text-gray-800 mb-4">The Risks of 'Vibe Coding'</h1>
+                    <p className="text-2xl text-gray-600 mb-8">in Modern Software Development</p>
+                    <p className="text-xl text-gray-500 italic">When AI-Generated Code Becomes a Professional Liability</p>
+                  </div>
+                  <div className="text-lg text-gray-600">
+                    <p>By Ronald, Nicolas & Dylan</p>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 1: Introduction
+            {
+              title: "1. Introduction",
+              subtitle: "What is Vibe Coding?",
+              content: (
+                <div className="space-y-8">
+                  <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-8 rounded-xl">
+                    <div className="flex items-start space-x-4">
+                      <Code className="w-12 h-12 text-purple-600 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Vibe Coding Definition </h3>
+                        <p className="text-lg text-gray-700">The act of generating code through AI prompts <span className="font-bold text-red-600">without understanding how the code works</span></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-red-50 p-6 rounded-xl border-2 border-red-200">
+                      <h4 className="text-xl font-bold text-red-700 mb-4 flex items-center">
+                        <XCircle className="w-6 h-6 mr-2" />
+                        Professional Risks
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start"><span className="mr-2">🔓</span> Security vulnerabilities</li>
+                        <li className="flex items-start"><span className="mr-2">⚖️</span> Non-compliance (GDPR)</li>
+                        <li className="flex items-start"><span className="mr-2">🔧</span> Poor maintainability</li>
+                        <li className="flex items-start"><span className="mr-2">💰</span> Increased debugging costs</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-orange-50 p-6 rounded-xl border-2 border-orange-200">
+                      <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
+                        <AlertTriangle className="w-6 h-6 mr-2" />
+                        Real-World Example
+                      </h4>
+                      <p className="text-gray-700 leading-relaxed">
+                        AI-generated authentication system resulted in <span className="font-bold text-red-600">insecure password handling</span> and an <span className="font-bold text-red-600">account takeover vulnerability</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 2: Problem Description
+            {
+              title: "2. Description of the Problem",
+              subtitle: "Why AI-Generated Code Can Fail",
+              content: (
+                <div className="space-y-6">
+                  <div className="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Core Issue</h3>
+                    <p className="text-lg text-gray-700">AI does not understand context, business rules, or hidden constraints</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <CheckCircle className="w-6 h-6 mr-2 text-green-600" />
+                        Developers Must:
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start bg-green-50 p-3 rounded-lg">
+                          <span className="text-green-600 mr-2">✓</span>
+                          <span>Read and understand all generated code</span>
+                        </li>
+                        <li className="flex items-start bg-green-50 p-3 rounded-lg">
+                          <span className="text-green-600 mr-2">✓</span>
+                          <span>Verify security implications</span>
+                        </li>
+                        <li className="flex items-start bg-green-50 p-3 rounded-lg">
+                          <span className="text-green-600 mr-2">✓</span>
+                          <span>Ensure compliance with standards</span>
+                        </li>
+                        <li className="flex items-start bg-green-50 p-3 rounded-lg">
+                          <span className="text-green-600 mr-2">✓</span>
+                          <span>Avoid delegating critical logic to AI</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <XCircle className="w-6 h-6 mr-2 text-red-600" />
+                        Symptoms & Impacts:
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start bg-red-50 p-3 rounded-lg">
+                          <span className="text-red-600 mr-2">✗</span>
+                          <span>Developers can't explain their code</span>
+                        </li>
+                        <li className="flex items-start bg-red-50 p-3 rounded-lg">
+                          <span className="text-red-600 mr-2">✗</span>
+                          <span>Incorrect or outdated API usage</span>
+                        </li>
+                        <li className="flex items-start bg-red-50 p-3 rounded-lg">
+                          <span className="text-red-600 mr-2">✗</span>
+                          <span>Weak authentication handling</span>
+                        </li>
+                        <li className="flex items-start bg-red-50 p-3 rounded-lg">
+                          <span className="text-red-600 mr-2">✗</span>
+                          <span>Severe security vulnerabilities</span>
+                        </li>
+                        <li className="flex items-start bg-red-50 p-3 rounded-lg">
+                          <span className="text-red-600 mr-2">✗</span>
+                          <span>False productivity, poor quality</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 3: Tech Watch
+            {
+              title: "3. Technological Watch",
+              subtitle: "Industry Perspectives",
+              content: (
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-blue-500">
+                      <div className="flex items-center mb-3">
+                        <Shield className="w-8 h-8 text-blue-600 mr-3" />
+                        <h3 className="text-xl font-bold text-gray-800">Databricks & OWASP</h3>
+                      </div>
+                      <p className="text-gray-700">Focus on actual security vulnerabilities and authoritative guidelines → <span className="font-bold text-red-600">highlight dangers</span></p>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-4 border-green-500">
+                      <div className="flex items-center mb-3">
+                        <TrendingUp className="w-8 h-8 text-green-600 mr-3" />
+                        <h3 className="text-xl font-bold text-gray-800">IBM & GitHub Copilot</h3>
+                      </div>
+                      <p className="text-gray-700">Offer a general overview of benefits and risks → <span className="font-bold text-green-600">emphasize speed</span></p>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl border-l-4 border-orange-500">
+                      <div className="flex items-center mb-3">
+                        <Code className="w-8 h-8 text-orange-600 mr-3" />
+                        <h3 className="text-xl font-bold text-gray-800">Stack Overflow</h3>
+                      </div>
+                      <p className="text-gray-700">Reveals frequent and concrete debugging problems → <span className="font-bold text-orange-600">frequent errors</span></p>
+                    </div>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 4: Comparative Analysis
+            {
+              title: "4. Comparative Analysis",
+              subtitle: "Proposed Solutions from Industry Leaders",
+              content: (
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="bg-white p-5 rounded-xl border-2 border-blue-200 hover:shadow-lg transition-shadow">
+                      <h4 className="text-lg font-bold text-blue-700 mb-2 flex items-center">
+                        <Eye className="w-5 h-5 mr-2" />
+                        Databricks
+                      </h4>
+                      <p className="text-gray-700">Mandatory human examination of all AI-generated code</p>
+                    </div>
+
+                    <div className="bg-white p-5 rounded-xl border-2 border-green-200 hover:shadow-lg transition-shadow">
+                      <h4 className="text-lg font-bold text-green-700 mb-2 flex items-center">
+                        <Users className="w-5 h-5 mr-2" />
+                        IBM
+                      </h4>
+                      <p className="text-gray-700">Use AI to help, but maintain human oversight</p>
+                    </div>
+
+                    <div className="bg-white p-5 rounded-xl border-2 border-purple-200 hover:shadow-lg transition-shadow">
+                      <h4 className="text-lg font-bold text-purple-700 mb-2 flex items-center">
+                        <CheckCircle className="w-5 h-5 mr-2" />
+                        GitHub Copilot
+                      </h4>
+                      <p className="text-gray-700">Review every suggestion, add comprehensive tests</p>
+                    </div>
+
+                    <div className="bg-white p-5 rounded-xl border-2 border-orange-200 hover:shadow-lg transition-shadow">
+                      <h4 className="text-lg font-bold text-orange-700 mb-2 flex items-center">
+                        <BookOpen className="w-5 h-5 mr-2" />
+                        Stack Overflow
+                      </h4>
+                      <p className="text-gray-700">Rely on official documentation as primary source</p>
+                    </div>
+
+                    <div className="bg-white p-5 rounded-xl border-2 border-red-200 hover:shadow-lg transition-shadow">
+                      <h4 className="text-lg font-bold text-red-700 mb-2 flex items-center">
+                        <Lock className="w-5 h-5 mr-2" />
+                        OWASP
+                      </h4>
+                      <p className="text-gray-700">Implement security analysis tools systematically</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl mt-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Overall Comparison</h3>
+                    <p className="text-lg text-gray-700 text-center leading-relaxed">
+                      AI is a powerful accelerator <span className="font-bold text-green-600">only if combined with technical expertise</span>. 
+                      Vibe coding is <span className="font-bold text-red-600">risky for sensitive domains</span>. 
+                      Human supervision and security are <span className="font-bold text-blue-600">non-negotiable</span>.
+                    </p>
+                    </div>
+                </div>
+              )
+            },
+            // Slide 5: Critical Synthesis
+            {
+              title: "5. Critical Synthesis",
+              subtitle: "What We Recommend",
+              content: (
+                <div className="space-y-6">
+                  <div className="bg-green-50 p-6 rounded-xl border-2 border-green-300">
+                    <h3 className="text-2xl font-bold text-green-800 mb-4 text-center">Best Practices</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span className="text-2xl mr-3">🤖</span>
+                        <span className="text-gray-700 text-lg">Use AI as an <span className="font-bold">assistant</span>, not a replacement</span>
+                      </div>
+                      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span className="text-2xl mr-3">🔍</span>
+                        <span className="text-gray-700 text-lg">Always review, refactor, and test AI-generated code</span>
+                      </div>
+                      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span className="text-2xl mr-3">📚</span>
+                        <span className="text-gray-700 text-lg">Prioritize official documentation</span>
+                      </div>
+                      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span className="text-2xl mr-3">👥</span>
+                        <span className="text-gray-700 text-lg">Enforce code reviews and security scans</span>
+                      </div>
+                      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span className="text-2xl mr-3">🔒</span>
+                        <span className="text-gray-700 text-lg">Avoid using AI alone for sensitive components</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 className="text-xl font-bold text-blue-800 mb-3">Why?</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      AI uses outdated patterns and produces insecure logic. 
+                      <span className="font-bold text-blue-700"> Only a human developer can understand</span> context, business rules, and security constraints.
+                    </p>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 6: Future Monitoring
+            {
+              title: "5. Critical Synthesis (continued)",
+              subtitle: "Remaining Uncertainties & Future Monitoring",
+              content: (
+                <div className="space-y-6">
+                  <div className="bg-yellow-50 p-6 rounded-xl border-2 border-yellow-300">
+                    <h3 className="text-2xl font-bold text-yellow-800 mb-4 flex items-center justify-center">
+                      <AlertTriangle className="w-8 h-8 mr-3" />
+                      Remaining Uncertainties
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="bg-white p-4 rounded-lg">
+                        <p className="text-gray-700">⚠️ AI still lacks contextual understanding</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg">
+                        <p className="text-gray-700">🔓 Security vulnerabilities may remain undetected</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg">
+                        <p className="text-gray-700">📉 Over-reliance on AI may reduce developers' skills</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg">
+                        <p className="text-gray-700">⚖️ Legal status of AI-generated code remains unclear</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-purple-50 p-6 rounded-xl border-2 border-purple-300">
+                    <h3 className="text-xl font-bold text-purple-800 mb-4 text-center">What Should Be Monitored in the Future</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-white p-3 rounded-lg text-center">
+                        <p className="text-gray-700">📈 Progress of AI models in code reliability</p>
+                      </div>
+                      <div className="bg-white p-3 rounded-lg text-center">
+                        <p className="text-gray-700">🛡️ AI-powered security auditing tools</p>
+                      </div>
+                      <div className="bg-white p-3 rounded-lg text-center">
+                        <p className="text-gray-700">🇪🇺 New European regulations about AI code</p>
+                      </div>
+                      <div className="bg-white p-3 rounded-lg text-center">
+                        <p className="text-gray-700">⚙️ Best practices for CI/CD integration</p>
+                      </div>
+                    </div>
+                </div>
+              )
+            }, // <--- FIX: This comma was missing and caused the "Unexpected token" error.
+            // Slide 7: Conclusion
+            {
+              title: "6. Conclusion",
+              subtitle: "The Balanced Approach",
+              content: (
+                <div className="flex flex-col items-center justify-center h-full space-y-8">
+                  <div className="bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 p-8 rounded-2xl shadow-xl max-w-3xl">
+                    <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Key Takeaway</h3>
+                    <div className="text-center mb-6">
+                      <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
+                        Human + AI = Success
+                      </p>
+                    </div>
+                    <div className="space-y-4 text-lg text-gray-700">
+                      <p className="flex items-center justify-center">
+                        <CheckCircle className="w-6 h-6 text-green-600 mr-2 flex-shrink-0" />
+                        <span>AI allows to speed up tasks and increase productivity</span>
+                      </p>
+                      <p className="flex items-center justify-center">
+                        <XCircle className="w-6 h-6 text-red-600 mr-2 flex-shrink-0" />
+                        <span>Blind reliance introduces serious risks: security, maintainability, violations</span>
+                      </p>
+                      <p className="flex items-center justify-center">
+                        <Eye className="w-6 h-6 text-blue-600 mr-2 flex-shrink-0" />
+                        <span>Understand and validate all AI-generated code</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-indigo-600 text-white p-6 rounded-xl shadow-lg max-w-2xl">
+                    <p className="text-xl text-center font-semibold">
+                      Combining AI tools with human expertise = best approach. 
+                      Used responsibly, AI becomes a powerful assistant and not a source of vulnerabilities.
+                    </p>
+                  </div>
+                </div>
+              )
+            },
+            // Slide 8: Bibliography
+            {
+              title: "7. Bibliography",
+              subtitle: "Sources & References",
+              content: (
+                <div className="flex items-center justify-center h-full">
+                  <div className="bg-gray-50 p-8 rounded-xl max-w-4xl">
+                    <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center flex items-center justify-center">
+                      <BookOpen className="w-10 h-10 mr-3 text-blue-600" />
+                      Sources & References
+                    </h3>
+                    <div className="space-y-4 text-lg text-gray-700">
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="font-semibold text-blue-700">Databricks</p>
+                        <p className="text-sm text-gray-600">Security vulnerabilities and authoritative guidelines</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="font-semibold text-blue-700">OWASP (Open Web Application Security Project)</p>
+                        <p className="text-sm text-gray-600">Security analysis frameworks and best practices</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="font-semibold text-blue-700">IBM</p>
+                        <p className="text-sm text-gray-600">AI assistance and oversight strategies</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="font-semibold text-blue-700">GitHub Copilot</p>
+                        <p className="text-sm text-gray-600">AI code generation tools and review practices</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="font-semibold text-blue-700">Stack Overflow</p>
+                        <p className="text-sm text-gray-600">Developer community insights and debugging patterns</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+          ];
+
+          const nextSlide = () => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+          };
+
+          const prevSlide = () => {
+            setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+          };
+
+          const goToSlide = (index) => {
+            setCurrentSlide(index);
+          };
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col">
+              <div className="flex-1 flex items-center justify-center p-8">
+                <div className="w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6">
+                    <h2 className="text-3xl font-bold">{slides[currentSlide].title}</h2>
+                    <p className="text-lg text-indigo-100 mt-1">{slides[currentSlide].subtitle}</p>
+                  </div>
+
+                  <div className="p-8 min-h-[500px]">
+                    {slides[currentSlide].content}
+                  </div>
+
+                  <div className="bg-gray-100 p-4 flex items-center justify-between">
+                    <button
+                      onClick={prevSlide}
+                      className="flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={currentSlide === 0}
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                      <span>Previous</span>
+                    </button>
+
+                    <div className="flex space-x-2">
+                      {slides.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => goToSlide(index)}
+                          className={`w-3 h-3 rounded-full transition-all ${
+                            currentSlide === index
+                              ? 'bg-indigo-600 w-8'
+                              : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
+                          aria-label={`Go to slide ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={nextSlide}
+                      className="flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={currentSlide === slides.length - 1}
+                    >
+                      <span>Next</span>
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  <div className="bg-gray-50 px-4 py-2 text-center text-sm text-gray-600">
+                    Slide {currentSlide + 1} of {slides.length}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Presentation />);
+    </script>
+</body>
+</html>

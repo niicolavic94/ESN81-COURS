@@ -1,0 +1,149 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+'====================
+' Enum
+'====================
+enum RoleUtilisateur {
+  ADMIN
+  FORMATEUR
+  APPRENANT
+}
+
+'====================
+' Classe principale
+'====================
+class Utilisateur {
+  id : int
+  email : String
+  motDePasse : String
+  prenom : String
+  nom : String
+  role : RoleUtilisateur
+  codeAcces : String
+  dateCreation : Date
+  --
+  authentifier()
+  mettreAJourProfil()
+}
+
+'====================
+' Héritage
+'====================
+class Administrateur
+class Formateur
+class Apprenant
+
+Utilisateur <|-- Administrateur
+Utilisateur <|-- Formateur
+Utilisateur <|-- Apprenant
+
+'====================
+' Formation & Atelier
+'====================
+class Formation {
+  id : int
+  titre : String
+  description : String
+  statut : String
+  validee : Boolean
+  anneeAcademiqueId : int
+}
+
+class Atelier {
+  id : int
+  date : Date
+  heureDebut : Time
+  heureFin : Time
+  capacite : int
+  statut : String
+  formationId : int
+}
+
+Formateur "1" -- "N" Formation : anime
+Formation "1" -- "N" Atelier
+
+'====================
+' Salle
+'====================
+class Salle {
+  id : int
+  nom : String
+  capacite : int
+}
+
+Atelier "N" -- "1" Salle
+
+'====================
+' Inscription
+'====================
+class Inscription {
+  id : int
+  statut : String
+  dateCreation : Date
+}
+
+Apprenant "1" -- "N" Inscription
+Atelier "1" -- "N" Inscription
+
+'====================
+' Catégories
+'====================
+class Categorie {
+  id : int
+  nom : String
+}
+
+class FormationCategorie
+
+Formation "N" -- "N" Categorie : classée
+FormationCategorie -- Formation
+FormationCategorie -- Categorie
+
+'====================
+' Présence
+'====================
+class Presence {
+  id : int
+  present : Boolean
+  commentaire : String
+}
+
+Apprenant "1" -- "N" Presence
+Atelier "1" -- "N" Presence
+
+'====================
+' Évaluation
+'====================
+class Evaluation {
+  id : int
+  note : int
+  commentaire : String
+  dateCreation : Date
+}
+
+Apprenant "1" -- "N" Evaluation
+Atelier "1" -- "N" Evaluation
+
+'====================
+' Année académique
+'====================
+class AnneeAcademique {
+  id : int
+  annee : String
+  dateDebut : Date
+  dateFin : Date
+}
+
+AnneeAcademique "1" -- "N" Formation : contient
+
+'====================
+' ApprenantAnnee
+'====================
+class ApprenantAnnee
+
+Apprenant "N" -- "N" AnneeAcademique : inscrit
+ApprenantAnnee -- Apprenant
+ApprenantAnnee -- AnneeAcademique
+
+@enduml

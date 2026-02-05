@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de réservation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold fs-3" href="#">Hôtel Primo</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="reservation.html">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 titre">Confirmation de votre réservation</h2>
+
+        <div class="card-confirm shadow">
+            <h4 class="mb-3">🛏️ Chambre réservée :</h4>
+            <p id="chambre" class="fw-bold"></p>
+
+            <h4 class="mt-4 mb-3">📅 Dates :</h4>
+            <p id="dates"></p>
+
+            <h4 class="mt-4 mb-3">💶 Total :</h4>
+            <p id="total" class="fw-bold"></p>
+
+            <div class="text-center mt-4">
+                <a href="index.html" class="btn-retour">Retour à l'accueil</a>
+                <button class="btn-pdf" onclick="telechargerPDF()">Télécharger le récapitulatif en PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container d-flex justify-content-between flex-wrap">
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email : <a href="mailto:hotel@hotel.fr" class="text-warning">hotel@hotel.fr</a></p>
+                <p>Téléphone : 06 66 66 66 66</p>
+                <p>Adresse : 1 rue des lumières, Castres</p>
+                <a href="reservation.html" class="btn btn-warning btn-sm">Réserver</a>
+            </div>
+
+            <div class="mt-4 mt-md-0" style="max-width: 400px;">
+                <p class="small">© 2025 Group 1. Tous droits réservés.</p>
+                <p class="small">
+                    Nous utilisons des cookies pour vous offrir la meilleure expérience possible.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        const chambre = localStorage.getItem("chambre") || "Non renseigné";
+        const dates = localStorage.getItem("dates") || "Non renseigné";
+        const total = localStorage.getItem("total") ? localStorage.getItem("total") + " €" : "Non renseigné";
+
+        document.getElementById("chambre").innerText = chambre;
+        document.getElementById("dates").innerText = dates;
+        document.getElementById("total").innerText = total;
+
+        function telechargerPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setFontSize(18);
+            doc.text("Récapitulatif de réservation", 20, 20);
+            doc.setFontSize(14);
+            doc.text(`Chambre : ${chambre}`, 20, 40);
+            doc.text(`Dates : ${dates}`, 20, 55);
+            doc.text(`Montant total : ${total}`, 20, 70);
+            doc.text("Merci pour votre réservation à l'hôtel de l'Europe.", 20, 100);
+            doc.save("recapitulatif_reservation.pdf");
+        }
+    </script>
+
+</body>
+
+</html>

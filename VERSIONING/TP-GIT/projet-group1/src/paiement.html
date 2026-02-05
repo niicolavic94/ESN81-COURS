@@ -1,0 +1,117 @@
+<!-- ========================= PAGE PAIEMENT (paiement.html) ========================= -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #F8F8F8;
+            font-family: 'Georgia', serif;
+        }
+
+        .btn-payer {
+            background: #3C4B64;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold fs-3" href="#">Hôtel Primo</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="reservation.html">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Paiement Sécurisé</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="card shadow p-4 mb-4">
+                    <h4>Votre réservation</h4>
+                    <p id="recap-chambre"></p>
+                    <p id="recap-dates"></p>
+                    <p class="fw-bold fs-4" id="recap-total"></p>
+                </div>
+
+                <div class="card shadow p-4">
+                    <h4 class="mb-3">Informations de paiement</h4>
+                    <input id="nom" class="form-control mb-3" placeholder="Nom complet" />
+                    <input id="carte" class="form-control mb-3" placeholder="Numéro de carte" maxlength="16" />
+                    <div class="row mb-3">
+                        <div class="col"><input id="exp" class="form-control" placeholder="MM/AA"></div>
+                        <div class="col"><input id="cvc" class="form-control" maxlength="3" placeholder="CVC"></div>
+                    </div>
+                    <button class="btn-payer" onclick="payer()">Payer maintenant</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container d-flex justify-content-between flex-wrap">
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email : <a href="mailto:hotel@hotel.fr" class="text-warning">hotel@hotel.fr</a></p>
+                <p>Téléphone : 06 66 66 66 66</p>
+                <p>Adresse : 1 rue des lumières, Castres</p>
+                <a href="reservation.html" class="btn btn-warning btn-sm">Réserver</a>
+            </div>
+
+            <div class="mt-4 mt-md-0" style="max-width: 400px;">
+                <p class="small">© 2025 Group 1. Tous droits réservés.</p>
+                <p class="small">
+                    Nous utilisons des cookies pour vous offrir la meilleure expérience possible.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("recap-chambre").innerHTML = "Chambre : " + localStorage.getItem("chambre");
+            document.getElementById("recap-dates").innerHTML = "Séjour : " + localStorage.getItem("dates");
+            document.getElementById("recap-total").innerHTML = "TOTAL : " + localStorage.getItem("total") + " €";
+        };
+
+        function payer() {
+            alert("Paiement accepté. Merci pour votre réservation !");
+            window.location.href = "confirmation.html";
+        }
+    </script>
+</body>
+
+</html>

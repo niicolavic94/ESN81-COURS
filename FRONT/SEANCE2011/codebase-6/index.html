@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #003d82;
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #003d82;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #003d82;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background-color: #9ca3af;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle.active {
+            background-color: #003d82;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .toggle.active .toggle-slider {
+            transform: translateX(24px);
+        }
+
+        .password-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #9ca3af;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .dot.filled {
+            background-color: #003d82;
+            border-color: #003d82;
+        }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .numpad-btn {
+            padding: 18px;
+            background-color: #eff6ff;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #003d82;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .numpad-btn:hover {
+            background-color: #dbeafe;
+            transform: translateY(-2px);
+        }
+
+        .numpad-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #003d82;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #002a5c;
+        }
+
+        .forgot-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #6b7280;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .forgot-link:hover {
+            color: #003d82;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Connexion à votre compte particulier</h1>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="identifiant">Identifiant (10 chiffres)</label>
+                <input type="text" id="identifiant" maxlength="10" placeholder="">
+                <div class="remember-me">
+                    <span>Mémoriser mon identifiant</span>
+                    <div class="toggle-container">
+                        <div class="toggle" id="rememberToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mot de passe (6 chiffres)</label>
+                <div class="password-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <div class="numpad">
+                    <button type="button" class="numpad-btn" data-num="4">4</button>
+                    <button type="button" class="numpad-btn" data-num="7">7</button>
+                    <button type="button" class="numpad-btn" data-num="9">9</button>
+                    <button type="button" class="numpad-btn" data-num="3">3</button>
+                    <button type="button" class="numpad-btn" data-num="0">0</button>
+                    <button type="button" class="numpad-btn" data-num="6">6</button>
+                    <button type="button" class="numpad-btn" data-num="8">8</button>
+                    <button type="button" class="numpad-btn" data-num="2">2</button>
+                    <button type="button" class="numpad-btn" data-num="1">1</button>
+                    <button type="button" class="numpad-btn" data-num="5">5</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Se connecter</button>
+        </form>
+
+        <a href="#" class="forgot-link">Identifiant / Mot de passe oublié</a>
+    </div>
+
+    <script>
+        let password = '';
+        const dots = document.querySelectorAll('.dot');
+        const numpadBtns = document.querySelectorAll('.numpad-btn');
+        const toggle = document.getElementById('rememberToggle');
+        const form = document.getElementById('loginForm');
+
+        // Toggle remember me
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+
+        // Numpad functionality
+        numpadBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (password.length < 6) {
+                    password += this.dataset.num;
+                    updateDots();
+                }
+            });
+        });
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                if (index < password.length) {
+                    dot.classList.add('filled');
+                } else {
+                    dot.classList.remove('filled');
+                }
+            });
+        }
+
+        // Handle backspace
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && password.length > 0) {
+                password = password.slice(0, -1);
+                updateDots();
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const identifiant = document.getElementById('identifiant').value;
+            
+            if (identifiant.length === 10 && password.length === 6) {
+                alert('Connexion avec:\nIdentifiant: ' + identifiant + '\nMot de passe: ' + password);
+                // Here you would normally send the data to your server
+            } else {
+                alert('Veuillez remplir tous les champs correctement.');
+            }
+        });
+    </script>
+</body>
+</html>

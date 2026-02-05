@@ -1,0 +1,302 @@
+html {
+  font-size: 62.5%;
+  font-family: "Arial", sans-serif;
+}
+
+/* Désimbrication : html body -> body */
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #303e1b;
+}
+
+h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+/* Désimbrication : header#header h1 */
+header#header h1 {
+  text-align: center;
+}
+
+/* Désimbrication : header#header h1 img */
+header#header h1 img {
+  max-width: 100%;
+}
+
+/* Désimbrication : main#main > section */
+main#main > section {
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+/* --- Section Agenda --- */
+section#agenda {
+  background-color: #cfe277;
+  border-top: 1px solid #cfe277;
+}
+
+/* Désimbrication : section#agenda div.intro */
+section#agenda div.intro {
+  text-align: center;
+}
+
+/* Désimbrication : section#agenda ul */
+section#agenda ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Désimbrication : section#agenda ul li */
+section#agenda ul li {
+  padding: 2rem;
+  border-bottom: 1px solid #fda959;
+}
+
+/* Désimbrication : section#agenda ul li:last-child */
+section#agenda ul li:last-child {
+  border-bottom: none;
+}
+
+/* Désimbrication : section#agenda ul li .date */
+section#agenda ul li .date {
+  font-weight: bold;
+  color: #bb5c02;
+}
+
+/* Désimbrication : section#agenda ul li .title */
+section#agenda ul li .title {
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+/* Désimbrication : section#agenda ul li .description */
+section#agenda ul li .description {
+  margin-left: 2rem;
+}
+
+/* --- Section Courses --- */
+section#courses {
+  background-color: #edf4cb;
+  border-top: 1px solid #edf4cb;
+  color: #4c622a;
+}
+
+/* Désimbrication : section#courses h3 + ul */
+section#courses h3 + ul {
+  margin-top: 4rem;
+}
+
+/* COURS - Grid Layout responsive */
+/* Désimbrication : section#courses ul */
+section#courses ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding-left: 0;
+}
+
+/* Désimbrication : section#courses ul li */
+section#courses ul li {
+  box-sizing: border-box;
+  padding: 2rem;
+  background-color: #cfe277;
+  border: 1px solid #cfe277;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Désimbrication : section#courses ul li .course */
+section#courses ul li .course {
+  font-weight: bold;
+  display: block;
+  color: #303e1b;
+  font-size: 1.1em;
+  margin-bottom: 0.5rem;
+}
+
+/* Désimbrication : section#courses ul li .teachers */
+section#courses ul li .teachers {
+  display: block;
+}
+
+/* Désimbrication : section#courses ul li .duration */
+section#courses ul li .duration {
+  display: block;
+}
+
+/* Désimbrication : section#courses ul li .conditions */
+section#courses ul li .conditions {
+  display: block;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* Désimbrication : section#courses ul li .tarif */
+section#courses ul li .tarif {
+  display: block;
+  text-align: right;
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* --- Section Teachers --- */
+section#teachers {
+  background-color: #f4f8e0;
+  border-top: 1px solid #f4f8e0;
+}
+
+/* Désimbrication : section#teachers ul */
+section#teachers ul {
+  list-style-type: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+/* Désimbrication : section#teachers ul li */
+section#teachers ul li {
+  flex: 1;
+  flex-basis: 100%;
+  padding: 1rem;
+}
+
+/* Désimbrication : section#teachers ul li img */
+section#teachers ul li img {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Désimbrication : section#teachers ul li .name */
+section#teachers ul li .name {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+}
+
+/* --- Section Tarifs --- */
+/* Désimbrication : section#tarifs div.docs ul */
+section#tarifs div.docs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Désimbrication : section#tarifs div.docs ul li */
+section#tarifs div.docs ul li {
+  margin-bottom: 1rem;
+}
+
+/* Désimbrication : section#tarifs div.docs ul li a */
+section#tarifs div.docs ul li a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #ed7503;
+}
+
+/* Désimbrication : section#tarifs div.docs ul li a i */
+section#tarifs div.docs ul li a i {
+  margin-right: 0.5rem;
+}
+
+/* Désimbrication : section#tarifs div.docs ul li a:hover */
+section#tarifs div.docs ul li a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+/* Désimbrication : footer#footer section */
+footer#footer section {
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+/* Désimbrication : footer#footer section#partners */
+footer#footer section#partners {
+  background-color: #edf4cb;
+  border-top: 1px solid #edf4cb;
+}
+
+/* Désimbrication : footer#footer section#contact */
+footer#footer section#contact {
+  background-color: #cfe277;
+  border-top: 1px solid #cfe277;
+}
+
+/* Désimbrication : footer#footer section#association */
+footer#footer section#association {
+  background-color: #adc82b;
+  border-top: 1px solid #adc82b;
+}
+
+
+@media (min-width: 640px) {
+
+  section#teachers ul li {
+    flex: 1;
+    flex-basis: 25%;
+  }
+
+  section#teachers ul li .name {
+    background-color: #c8dd62;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  section#courses ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  section#courses ul li {
+    padding: 2rem;
+  }
+
+ 
+  section#courses h3:first-of-type + ul li:nth-child(7) {
+    grid-column: span 1;
+  }
+
+  section#courses h3:first-of-type + ul li:nth-child(8) {
+    grid-column: span 2;
+  }
+
+
+  section#courses h3:nth-of-type(2) + ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (min-width: 1024px) {
+@media (min-width: 1024px) {
+
+  section#courses ul {
+    gap: 2rem;
+  }
+}}

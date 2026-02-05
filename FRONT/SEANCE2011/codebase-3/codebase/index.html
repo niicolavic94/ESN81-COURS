@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+
+    font-family: "Coolvetica-condensed"; 
+    src: url("fonts/coolvetica/Coolvetica-Cond.woff2") format("woff2"),
+         url("fonts/coolvetica/Coolvetica-Cond.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Coolvetica-condensed", sans-serif;
+}
+
+body{
+    color: #1a2d3c;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    background-color: #FCF1DF;
+    margin: 0;
+    padding: 30px; 
+}
+
+
+#container {
+    
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+a {
+    
+    color: inherit;
+    text-decoration: none;
+}
+
+time {
+    font-size: 4rem;
+}
+time, .title  {
+color: #7f5b89;
+font-family: "Coolvetica-condensed";
+
+}
+
+.read-more {
+    color: #7f5b89;
+    font-family: "Roboto", sans-serif;
+}
+
+.day {
+font-family: "Coolvetica-condensed";
+font-size: 2rem;
+text-transform: uppercase;
+padding-bottom: 5px;
+margin-bottom: 10px; 
+}
+
+/* display grid pour répartir les 3 cards correctement*/
+.events-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.type-events {
+    
+     background-color: #FBE9CC;
+    overflow: hidden;
+}
+
+.entry-header {
+    margin-bottom: 15px; 
+}
+
+.entry-title {
+    font-family: "Coolvetica-condensed";
+    font-size: 3rem; 
+
+
+
+}
+
+.hour, .title {
+    font-size: 2rem;
+    font-family: "Coolvetica-condensed";
+    font-weight: bold;
+    margin-right: 5px; 
+    display: inline-block;
+}
+.entry-content {
+    margin-bottom: 15px;
+}
+.entry-content img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    margin-bottom: 15px;
+    object-fit: cover;
+    object-position: top center; /* ajuste la 3e image */
+   
+
+}
+.excerpt p {
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0;
+    overflow: hidden;
+
+}
+
+footer {
+    text-align:right;
+}
+
+
+.read-more {
+font-size:1.6rem; 
+
+}
+.read-more .fa-forward-step {
+    margin-left: 5px; 
+}
+    </style>
+
+
+</head>
+<body>
+    
+
+    <section id="container">
+    
+    <h3 class="day">
+        <a href="#" rel="bookmark">
+            <time datetime="2025-08-15"> vendredi 15 août</time>
+        </a>
+    </h3>
+    
+    <div class="events-row">     
+        
+        <article id="post-6410" class="type-events">
+            
+            <header class="entry-header">
+                
+                <h4 class="entry-title">
+                    <a href="https://www.festivaout.com/events/datwood/" rel="bookmark">
+                        <time datetime="2025-08-15T19:00:00" class="hour">19h</time>
+                        <span class="title">Datwood</span>	                        
+                    </a>
+                </h4>
+                
+            </header>
+            
+            <main class="entry-content">
+                
+                <a href="#" title="Datwood"><img src="photos/datwood-min-768x614.webp"/></a>
+                
+                <div class="excerpt">                        
+                    
+                    <p>Originaire de Toulouse, DATWOOD est un projet musical formé en 2022. Ce quintet propose un mélange de jazz et de musiques actuelles, incorporant des influences allant du funk à l’afro. Butcher Brown, Andrew Renfroe et Fela Kuti, sont des influences majeures du groupe dans leur approche de la composition et de l’orchestration. Aussi très inspirés […]</p>
+                    
+                </div>
+                
+            </main>
+            
+            <footer>		
+                
+                <a href="#" class="read-more">En Savoir plus <i class="fa-solid fa-forward-step" aria-hidden="true"></i></a>
+                
+            </footer>
+            
+        </article>
+        
+        <article id="post-6411" class="type-events">
+            
+            <header class="entry-header">
+                
+                <h4 class="entry-title">
+                    <a href="#" rel="bookmark">
+                        <time datetime="2025-08-15T21:00:00" class="hour">21h</time>
+                        <span class="title">Heeka</span>	                            
+                    </a>
+                </h4>
+                
+            </header>
+            
+            <main class="entry-content">
+                
+                <a href="#" title="Heeka"><img src="photos/heeka-min-768x512.webp" /></a>
+                
+                <div class="excerpt">                            
+                    
+                    <p>Heeka monte aujourd’hui sur scène accompagnée de sa guitare et de sa voix, déversant ses tripes crues et encore chaudes. C’est dans un univers rock-folk incarné et très personnel qu’elle nous emmène en voyage sur le dos&nbsp;d’un oiseau en vol ayant déjà perdu quelques plumes. Comme fil rouge dans ses morceaux, on retrouve sa voix. […]</p>
+                    
+                </div>
+                
+            </main>
+            
+            <footer>		
+                
+                <a href="#" class="read-more">En Savoir plus <i class="fa-solid fa-forward-step" aria-hidden="true"></i></a>
+                
+            </footer>
+            
+        </article>               
+        
+        
+        <article id="post-6413" class="type-events">
+            
+            <header class="entry-header">
+                
+                <h4 class="entry-title">
+                    <a href="#" rel="bookmark">
+                        <time datetime="2025-08-15T23:00:00" class="hour">23h</time>
+                        <span class="title">Lolomis</span>	                                
+                    </a>
+                </h4>
+                
+            </header>
+            
+            <main class="entry-content">
+                
+                <a href="#" title="Lolomis"><img src="photos/lolomis-min.webp" /> </a>  
+                
+                <div class="excerpt">                                
+                    
+                    <p>Lolomis change de mue une nouvelle fois, Avec son album Carmen 404, il s’embarque sur les sentiers du rituel;&nbsp;Une cavalcade impétueuse entre rêveries diaphanes, état de surconscience, transe poisseuse et rituel de possession. A mi-chemin entre Nina Hagen et Billie Eilish, la flûte, harpe, batterie, machines et la voix de Lolomis proposent désormais une musique […]</p>
+                    
+                </div>
+                
+            </main>
+            
+            <footer>		
+                
+                <a href="#" class="read-more">En Savoir plus <i class="fa-solid fa-forward-step" aria-hidden="true"></i></a>
+                
+            </footer>
+            
+        </article>   
+        
+    </div>
+
+    </section>
+    
+</body>
+</html>

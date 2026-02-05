@@ -1,0 +1,118 @@
+/* Styles généraux pour le corps et l'application */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.App-container {
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* --- Styles pour le composant Person --- */
+
+.Person-card {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.Person-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.Person-info p {
+  font-size: 1.1em;
+  margin: 0;
+  color: #495057;
+}
+
+.Person-info input[type="text"] {
+  padding: 8px;
+  border: 1px solid #adb5bd;
+  border-radius: 4px;
+  font-size: 1em;
+  width: auto;
+  min-width: 150px;
+  margin: 0 5px;
+}
+
+/* Conteneur des boutons */
+.Person-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Pour gérer le débordement sur petits écrans */
+}
+
+/* Styles pour tous les boutons */
+.Person-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.Person-actions button:hover {
+  transform: translateY(-1px);
+}
+
+/* Bouton Augmenter age */
+.btn-age {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-age:hover {
+  background-color: #218838;
+}
+
+/* Bouton Sauvegarder le nom */
+.btn-save {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+/* Bouton Supprimer */
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  margin-left: auto; /* Pour le pousser à droite */
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}

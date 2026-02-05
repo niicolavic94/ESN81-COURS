@@ -1,0 +1,34 @@
+🚨 Confirmation du Blocage Interne
+Le résultat de votre commande PowerShell est le même que précédemment :
+
+LocalAddress	State	OwningProcess
+::1	Listen	740
+
+Exporter vers Sheets
+
+Le processus PID 740, qui est le composant système wslrelay (comme nous l'avions identifié précédemment), est toujours en écoute sur le port 80 via l'interface IPv6 (::1).
+
+🎯 La Situation Actuelle
+Apache est prêt (écoute sur le port 80).
+
+wslrelay est prioritaire (il a pris le port 80 en IPv6).
+
+Cela provoque l'erreur ERR_CONNECTION_REFUSED car wslrelay intercepte et refuse les connexions destinées au port 80 avant qu'elles n'atteignent votre serveur Apache sous WSL.
+
+🛠️ La Solution Définitive : Exclure le Port 80
+Puisque wslrelay revient en force même après wsl --shutdown, nous devons forcer Windows à interdire l'utilisation du port 80 par tout processus automatique (y compris wslrelay). C'est l'étape la plus fiable pour résoudre les conflits wslrelay.
+
+1. Exécuter la Commande d'Exclusion (Côté Windows)
+Ouvrez PowerShell en tant qu'Administrateur et exécutez les commandes suivantes pour exclure le port 80 des allocations dynamiques d'IPv4 et IPv6 :
+
+PowerShell
+
+netsh int ipv4 add excludedportrange protocol=tcp startport=80 numberofports=1
+netsh int ipv6 add excludedportrange protocol=tcp startport=80 numberofports=1
+2. Redémarrage de la Machine
+Pour que ces changements d'exclusion de port soient permanents et pris en compte par le système de gestion des ports (http.sys), vous devez redémarrer complètement votre ordinateur Windows.
+
+3. Vérification Finale (Après Redémarrage)
+Après le redémarrage, ouvrez WSL, démarrez Apache (sudo systemctl start apache2), et vérifiez dans PowerShell que le port 80 n'est plus utilisé. Ensuite, testez dans le navigateur : http://monsite.local/.
+
+Avez-vous pu exécuter les commandes netsh pour exclure le port 80 et redémarrer votre machine ?

@@ -1,0 +1,76 @@
+
+/* ================================
+   PAGE CONTACT - STYLE UNIFIÉ
+   Avec Bootstrap + Thème existant
+   ================================ */
+
+body {
+    background: #F8F8F8;
+    font-family: 'Georgia', serif;
+}
+
+/* Conteneur principal */
+.contact-container {
+    max-width: 900px;
+    background: white;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* Titres */
+h1, h2 {
+    color: #3C4B64;
+    font-weight: bold;
+}
+
+/* Champs du formulaire */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+textarea.form-control {
+    height: 150px;
+}
+
+/* Bouton principal */
+.btn-contact {
+    background: #3C4B64;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.btn-contact:hover {
+    background: #2F3B51;
+}
+
+/* Infos hôtel */
+.info p {
+    font-size: 18px;
+}
+
+/* Carte */
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+}
+
+body { background: #F8F8F8; font-family: 'Georgia', serif; }
+.room-img { height: 280px; object-fit: cover; border-radius: 10px; }
+.btn-reserver { background: #3C4B64; color: white; border-radius: 10px; padding: 12px 20px; }
+.btn-reserver:hover { background: #2F3B51; }
+.btn-payer { background: #3C4B64; color: white; padding: 12px; border-radius: 8px; width: 100%; }
+.btn-payer:hover { background: #2F3B51; }
+.card-confirm { background: white; padding: 25px; border-radius: 12px; }
+.titre { color: #3C4B64; }
+.btn-retour, .btn-pdf { background: #3C4B64; color: white; padding: 12px 18px; border-radius: 10px; margin: 5px; border: none; cursor: pointer; }
+.btn-retour:hover, .btn-pdf:hover { background: #2F3B51; }

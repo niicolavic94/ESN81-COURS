@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hôtel - Accueil</title>
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold fs-3" href="#">Hôtel Primo</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="reservation.html">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="position-relative">
+        <img src="img/hotel2.jpg" class="w-100" style="object-fit: cover; height: 60vh; opacity: 70%;">
+
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+            <h1 class="display-4 fw-bold text-shadow">Bienvenue à l'Hôtel Primo</h1>
+            <p class="fs-4 fw-bold">Confort, élégance et convivialité en plein cœur de Primo.</p>
+            <a href="reservation.html" class="btn btn-primary btn-lg mt-2">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <!-- KEY FEATURES -->
+    <section class="container my-5">
+        <div class="row text-center g-4">
+
+            <div class="col-md-3">
+                <div class="card p-4 border-0 shadow-sm">
+                    <h3>⭐</h3>
+                    <h5>Confort moderne</h5>
+                    <p class="text-secondary">Chambres rénovées, climatisées et spacieuses.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card p-4 border-0 shadow-sm">
+                    <h3>🍽</h3>
+                    <h5>Restaurant</h5>
+                    <p class="text-secondary">Repas servis du dimanche au jeudi soir.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card p-4 border-0 shadow-sm">
+                    <h3>📍</h3>
+                    <h5>Centre-ville</h5>
+                    <p class="text-secondary">À deux pas des commodités et attractions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card p-4 border-0 shadow-sm">
+                    <h3>🚗</h3>
+                    <h5>Parking gratuit</h5>
+                    <p class="text-secondary">Stationnement sécurisé pour nos clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTEL HISTORY -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">L'Histoire de l'Hôtel</h2>
+
+        <div class="card shadow-sm p-4 border-0">
+            <p class="fs-5 text-secondary">
+                Fondé en 1954 par la famille Primo, l’Hôtel primo était à l’origine une petite auberge
+                destinée aux voyageurs de passage à Primo. Au fil des décennies, l’établissement s’est développé,
+                puis entièrement modernisé en 2022 tout en conservant son charme d’époque.
+            </p>
+
+            <p class="fs-5 text-secondary">
+                Aujourd’hui, l’hôtel reste fidèle à ses valeurs : accueil chaleureux,
+                service de qualité et ambiance conviviale.
+            </p>
+        </div>
+    </section>
+
+    <!-- NOTRE HOTEL -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Notre Hôtel</h2>
+
+        <div class="card shadow-sm p-4 border-0">
+            <p class="fs-5 text-secondary">
+                Chacune de nos chambres est spacieuse, récemment rénovée et climatisée.
+                Elles sont toutes équipées d'une literie de qualité, de vraies salles de bain/douche
+                et ont fait l'objet d'une décoration unique.
+                Rénové en 2022, le bar vous propose un espace de convivialité.
+                L'Europe, c'est avant tout son patio à l'atmosphère hors du temps
+                et une équipe aux petits soins.
+            </p>
+        </div>
+    </section>
+
+    <!-- PHOTO CAROUSEL -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Photos</h2>
+
+        <div id="carouselHotel" class="carousel slide shadow rounded" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/id/1035/800/600" class="d-block w-100 rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/1043/800/600" class="d-block w-100 rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/1050/800/600" class="d-block w-100 rounded">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHotel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ROOMS SECTION -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Nos Chambres</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://picsum.photos/id/1050/800/600" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Chambre Standard</h5>
+                        <p class="text-secondary">Élégante et abordable pour un séjour confortable.</p>
+                        <p class="fw-bold">80 € / nuit</p>
+                        <a href="reservation.html" class="btn btn-primary w-100">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://picsum.photos/id/1043/800/600" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Chambre Confort</h5>
+                        <p class="text-secondary">Un espace chaleureux pour un séjour paisible.</p>
+                        <p class="fw-bold">95 € / nuit</p>
+                        <a href="reservation.html" class="btn btn-primary w-100">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://picsum.photos/id/1035/800/600" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Chambre Premium</h5>
+                        <p class="text-secondary">Confort et élégance avec vue panoramique.</p>
+                        <p class="fw-bold">120 € / nuit</p>
+                        <a href="reservation.html" class="btn btn-primary w-100">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Avis de nos clients</h2>
+
+        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+
+                <div class="carousel-item active">
+                    <p class="fs-5">⭐⭐⭐⭐⭐ "Séjour incroyable, personnel adorable !" – Julie R.</p>
+                </div>
+
+                <div class="carousel-item">
+                    <p class="fs-5">⭐⭐⭐⭐ "Chambre très propre et confortable." – Marc L.</p>
+                </div>
+
+                <div class="carousel-item">
+                    <p class="fs-5">⭐⭐⭐⭐⭐ "Le patio est magnifique, je recommande vivement." – Sarah D.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Nous trouver</h2>
+
+        <div class="card shadow-sm p-3 border-0">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.072550291681!2d2.235488285778369!3d43.60503099659935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae11e88d9520e5%3A0xdeec2de06d2e8ec0!2sEurope%20H%C3%B4tel%20Castres!5e0!3m2!1sfr!2sfr!4v1765536648285!5m2!1sfr!2sfr"
+                width="100%" height="450" style="border:0;" allowfullscreen loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container d-flex justify-content-between flex-wrap">
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email : <a href="mailto:hotel@hotel.fr" class="text-warning">hotel@hotel.fr</a></p>
+                <p>Téléphone : 06 66 66 66 66</p>
+                <p>Adresse : 1 rue des lumières, Castres</p>
+                <a href="reservation.html" class="btn btn-warning btn-sm">Réserver</a>
+            </div>
+
+            <div class="mt-4 mt-md-0" style="max-width: 400px;">
+                <p class="small">© 2025 Group 1. Tous droits réservés.</p>
+                <p class="small">
+                    Nous utilisons des cookies pour vous offrir la meilleure expérience possible.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

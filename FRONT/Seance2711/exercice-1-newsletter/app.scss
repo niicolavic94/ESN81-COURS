@@ -1,0 +1,19 @@
+
+        form{
+            max-width: 700px;
+            padding: 1em;
+            background-color: bisque;
+            margin: 0 auto;
+        }
+
+        @media (max-width:300px) {
+          
+            h2 {
+                line-height: 2rem;
+            }
+            input,button{
+            margin-top: 1rem;
+            display: block;
+            width:100%;
+            }
+        }

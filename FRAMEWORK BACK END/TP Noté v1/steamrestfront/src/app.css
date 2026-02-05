@@ -1,0 +1,69 @@
+:root {
+  /* Variables pour la cohérence des couleurs et du style */
+  --couleur-primaire: #4CAF50; /* Vert pour les éléments principaux (liens, boutons) */
+  --couleur-secondaire: #1E88E5; /* Bleu pour l'accentuation ou les liens survolés */
+  --couleur-texte: rgba(255, 255, 255, 0.95); /* Texte légèrement plus opaque */
+  --couleur-fond: #1c1c1c; /* Fond un peu plus sombre que #242424 */
+  --taille-police-base: 16px;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6; /* Amélioration de la lisibilité */
+  font-weight: 400;
+
+  color-scheme: dark; /* On force le mode sombre pour cette palette */
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- */
+
+body {
+  margin: 0;
+  font-size: var(--taille-police-base);
+  min-height: 100vh; /* S'assurer que le corps prend toute la hauteur */
+}
+
+/* --- */
+
+#app {
+  /* Utilisation de Flexbox pour centrer le contenu verticalement/horizontalement (si désiré) */
+  display: flex; 
+  flex-direction: column; /* Le contenu s'empile verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+  min-height: 100vh; 
+  width: 100%;
+  padding: 20px; /* Ajout d'un peu d'espace autour du contenu */
+  box-sizing: border-box; /* S'assurer que le padding est inclus dans la largeur/hauteur */
+}
+
+/* --- */
+
+.page-title {
+  font-size: 2.5em; /* Titre plus percutant */
+  font-weight: 700; /* Plus gras */
+  text-align: center;
+  margin-block: 1em 0.8em; /* Plus d'espace au-dessus du titre */
+  color: var(--couleur-primaire); /* Utilisation de la couleur primaire */
+  text-transform: uppercase; /* Rend le titre plus visible */
+  letter-spacing: 1px;
+}
+
+/* --- */
+
+a {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: var(--couleur-primaire); /* Utilisation de la couleur primaire pour les liens */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Ajout d'une transition pour une meilleure UX */
+}
+
+a:hover {
+  color: var(--couleur-secondaire); /* Changement de couleur au survol */
+  border-bottom: 2px solid var(--couleur-secondaire); /* Soulignement au survol */
+  cursor: pointer;
+}

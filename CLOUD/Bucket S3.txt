@@ -1,0 +1,58 @@
+Bucket S3
+
+s3:CreateBucket	Créer un bucket
+s3:DeleteBucket	Supprimer un bucket
+s3:ListAllMyBuckets	Lister tous les buckets du compte
+s3:GetBucketLocation	Connaître la région d’un bucket
+s3:PutBucketPolicy	Définir ou modifier la politique IAM du bucket
+s3:GetBucketPolicy	Lire la politique du bucket
+s3:PutBucketAcl	Modifier les ACL (contrôle d’accès) du bucket
+s3:GetBucketAcl	Lire les ACL du bucket
+
+s3:PutObject	Ajouter / téléverser un objet
+s3:GetObject	Télécharger un objet
+s3:DeleteObject	Supprimer un objet
+s3:ListBucket	Lister les objets dans un bucket
+s3:GetObjectVersion	Lire une version d’un objet (si versioning activé)
+s3:PutObjectAcl	Modifier les ACL d’un objet
+s3:GetObjectAcl	Lire les ACL d’un objet
+
+s3:PutEncryptionConfiguration	Activer ou configurer le chiffrement par défaut
+s3:GetEncryptionConfiguration	Lire la configuration de chiffrement
+s3:PutBucketPublicAccessBlock	Empêcher la mise en public du bucket
+s3:GetBucketPublicAccessBlock	Lire cette configuration
+s3:PutBucketVersioning	Activer la gestion de versions
+s3:GetBucketVersioning	Lire l’état du versioning
+
+s3:PutBucketLogging	Configurer les logs d’accès
+s3:GetBucketLogging	Lire la configuration des logs
+s3:PutLifecycleConfiguration	Créer une règle de cycle de vie (ex : archiver vers Glacier)
+s3:GetLifecycleConfiguration	Lire la règle de cycle de vie
+
+Roles RDS
+rds:CreateDBInstance	Créer une instance RDS
+rds:DeleteDBInstance	Supprimer une instance
+rds:StartDBInstance	Démarrer une instance arrêtée
+rds:StopDBInstance	Arrêter une instance
+rds:ModifyDBInstance	Modifier la configuration
+rds:DescribeDBInstances	Lister ou consulter les instances
+
+rds:CreateDBSnapshot	Créer un snapshot (sauvegarde)
+rds:DeleteDBSnapshot	Supprimer un snapshot
+rds:RestoreDBInstanceFromDBSnapshot	Restaurer une instance à partir d’un snapshot
+rds:DescribeDBSnapshots	Lister les snapshots existants
+rds:CreateDBCluster	Créer un cluster Aurora
+rds:DeleteDBCluster	Supprimer un cluster Aurora
+rds:DescribeDBClusters	Consulter les clusters
+
+rds:ModifyDBSubnetGroup	Modifier le groupe de sous-réseaux associé
+rds:DescribeDBSubnetGroups	Lister les groupes de sous-réseaux
+rds:ModifyDBParameterGroup	Modifier les paramètres (ex : taille du cache, timeout)
+rds:DescribeDBParameterGroups	Lister les groupes de paramètres
+rds:AddRoleToDBInstance	Associer un rôle IAM à une instance
+rds:RebootDBInstance	Redémarrer une instance RDS
+
+rds:EnableEnhancedMonitoring	Activer la supervision CloudWatch
+rds:DescribeEventSubscriptions	Lire les alertes ou abonnements d’événements
+rds:ModifyDBInstance	Activer le chiffrement KMS
+rds:ListTagsForResource	Lire les tags d’une ressource RDS

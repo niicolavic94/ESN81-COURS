@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Événement</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+        
+        body {
+            font-size: 16px;
+            line-height: 30px;
+            font-family: 'Roboto', sans-serif; 
+            display: flex;
+            padding: 20px; 
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        
+        .events .event {
+            width: 395px; 
+            position: relative;
+        }
+
+     
+        .events .event figure {
+            position: relative; 
+            margin: 0;
+            width: 100%;
+        }
+
+       
+        .events .event figure img {
+            width: 100%;
+            display: block;
+        }
+
+    
+        .events .event figure .is_festik {
+            background-image: url('img/festik.gif');
+            background-repeat: no-repeat;
+            height: 45px; 
+            width: 100px; 
+            
+            display: block;
+            position: absolute;
+            z-index: 10;
+            background-size: contain;
+            right: -11px; 
+            top: -10px; 
+        }
+
+       
+.events .event figcaption {
+    position: absolute;
+    bottom: 0;   
+    width: 375px;   
+    background-color: lightgrey;
+    opacity:  0.5; 
+    left: 0; 
+    right: 0; 
+    margin: 10px auto; 
+    padding: 10px;
+    line-height: 1.2;
+   
+}
+
+
+.events .event figcaption .categorie,
+.events .event figcaption .date {
+    color:black;
+    display: inline;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: bolder;
+}
+
+.events .event figcaption .categorie {
+    color: red;
+      font-weight: bolder;
+}
+
+
+.events .event figcaption .titre {
+   
+    text-transform: uppercase;
+    color:black;
+ 
+    display: block; 
+    width: 375px; 
+    margin-top: 5px;
+}
+    </style>
+</head>
+<body>
+    
+    <section class="events">
+        
+        <article class="event">
+
+            <figure>
+                <span class="is_festik"> </span> 
+                <img src="img/gaspardchauvelot.jpg" alt="Tentatives d'épuisement #4 3" title="Tentatives d'épuisement #4 3">
+                
+                <figcaption>
+                    <span class="categorie">spectacle</span>
+                    <span class="date">samedi 25 octobre 21h00</span>
+                    
+                    <span class="titre">Tentatives d’épuisement #4</span>
+                </figcaption>
+
+            </figure>
+            
+        </article>
+
+    </section>
+    
+</body>
+</html>

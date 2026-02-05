@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hôtel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold fs-3" href="#">Hôtel Primo</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="reservation.html">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+
+        <h1>Contactez-nous</h1>
+
+        <form class="row g-3">
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="nom" placeholder="Votre nom" required>
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" class="form-control" name="email" placeholder="Votre email" required>
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="telephone" placeholder="Votre numéro de téléphone"
+                    required>
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="adresse" placeholder="Votre adresse complète">
+            </div>
+
+            <div class="col-12">
+                <textarea class="form-control" name="message" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn-contact">Envoyer</button>
+            </div>
+
+        </form>
+
+        <div class="info mt-5">
+            <h2>Informations de l'hôtel</h2>
+            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+            <p><strong>Email :</strong> contact@hotel-exemple.com</p>
+        </div>
+
+        <div class="map mt-4">
+            <h2>Localisation</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.072550291681!2d2.235488285778369!3d43.60503099659935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae11e88d9520e5%3A0xdeec2de06d2e8ec0!2sEurope%20H%C3%B4tel%20Castres!5e0!3m2!1sfr!2sfr!4v1765536648285!5m2!1sfr!2sfr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container d-flex justify-content-between flex-wrap">
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email : <a href="mailto:hotel@hotel.fr" class="text-warning">hotel@hotel.fr</a></p>
+                <p>Téléphone : 06 66 66 66 66</p>
+                <p>Adresse : 1 rue des lumières, Castres</p>
+                <a href="reservation.html" class="btn btn-warning btn-sm">Réserver</a>
+            </div>
+
+            <div class="mt-4 mt-md-0" style="max-width: 400px;">
+                <p class="small">© 2025 Group 1. Tous droits réservés.</p>
+                <p class="small">
+                    Nous utilisons des cookies pour vous offrir la meilleure expérience possible.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

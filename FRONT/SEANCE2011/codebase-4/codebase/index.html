@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;1,700&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  width: 100%;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+.activities{
+    width: 90%;
+    margin: 200px auto;
+}
+
+.activities .list {
+  columns: 4;
+  column-gap: 60px;
+}
+
+
+
+.activities .list a {
+position: relative;
+display: block;
+margin-bottom: 30px;
+height: 420px;
+/*ajout pour couvrir tout et bordures */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+/* bordures arrondies*/
+border-radius: 20px;
+/* ombres*/
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+
+}
+/* permet de toucher que la photo 1 & 4 */
+.activities .list a:nth-child(1), .activities .list a:nth-child(4){
+    height: 870px; /* enleve les 3Opx de margin bottom a */
+
+}
+
+.activities .list a h2 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+   /* ajuster les h2  */
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em;
+  background-color: white;
+}
+
+    </style>
+</head>
+<body>
+
+    <aside class="activities">
+
+        <h2>Activités à Marseille</h2> 
+
+        <div class="list">
+
+            <a class="card" style="background-image:url('./images/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg')">
+                <h2>Vieux port</h2>               
+            </a>
+
+            <a class="card" style="background-image:url('./images/paul-hermann-QFTrLdQIRhI-unsplash.jpg')">
+                <h2>Fort de Pomègues</h2>               
+            </a>
+
+            <a class="card" style="background-image:url('./images/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg')">
+                <h2>Iles du Frioul</h2>               
+            </a>
+
+            <a class="card" style="background-image:url('./images/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg')">
+                <h2>Parc national des Calenques</h2>              
+            </a>
+
+            <a class="card" style="background-image:url('./images/florian-wehde-xW9e8gdotxI-unsplash.jpg')">
+                <h2>Notre-Dame De la garde</h2>              
+            </a>
+
+            <a class="card" style="background-image:url('./images/lena-paulin-wH2-EJoDcV0-unsplash.jpg')">
+                <h2>Parc Longchamp</h2>               
+            </a>          
+
+        </div>
+
+    </aside>
+    
+</body>
+</html>

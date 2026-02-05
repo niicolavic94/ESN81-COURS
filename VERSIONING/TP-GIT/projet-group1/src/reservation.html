@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Hotel de l'Europe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold fs-3" href="#">Hôtel Primo</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="reservation.html">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Réserver une chambre</h2>
+
+        <div class="card shadow p-4 mb-4">
+            <h4>Choisissez vos dates</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Date d'arrivée</label>
+                    <input type="date" id="dateArrivee" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Date de départ</label>
+                    <input type="date" id="dateDepart" class="form-control">
+                </div>
+            </div>
+            <button class="btn btn-primary mt-2" onclick="afficherDisponibilites()">Afficher les chambres
+                disponibles</button>
+        </div>
+
+        <div id="listeChambres" class="row"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container d-flex justify-content-between flex-wrap">
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email : <a href="mailto:hotel@hotel.fr" class="text-warning">hotel@hotel.fr</a></p>
+                <p>Téléphone : 06 66 66 66 66</p>
+                <p>Adresse : 1 rue des lumières, Castres</p>
+                <a href="reservation.html" class="btn btn-warning btn-sm">Réserver</a>
+            </div>
+
+            <div class="mt-4 mt-md-0" style="max-width: 400px;">
+                <p class="small">© 2025 Group 1. Tous droits réservés.</p>
+                <p class="small">
+                    Nous utilisons des cookies pour vous offrir la meilleure expérience possible.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Chambres avec règles de disponibilité
+        const chambres = [
+            { nom: "Chambre Premium", prix: 120, image: "https://picsum.photos/id/1035/800/600", description: "Confort et élégance avec vue panoramique.", minNuits: 1 },
+            { nom: "Chambre Confort", prix: 95, image: "https://picsum.photos/id/1043/800/600", description: "Un espace chaleureux pour un séjour paisible.", minNuits: 1 },
+            { nom: "Suite Luxueuse", prix: 180, image: "https://picsum.photos/id/1050/800/600", description: "Un espace exceptionnel avec salon privé.", minNuits: 2 }
+        ];
+
+        function afficherDisponibilites() {
+            const debut = document.getElementById("dateArrivee").value;
+            const fin = document.getElementById("dateDepart").value;
+            if (!debut || !fin) { alert("Sélectionnez vos dates."); return; }
+
+            const d1 = new Date(debut);
+            const d2 = new Date(fin);
+            const nuits = (d2 - d1) / (1000 * 3600 * 24);
+            if (nuits <= 0) { alert("Dates invalides."); return; }
+
+            const zone = document.getElementById("listeChambres");
+            zone.innerHTML = "";
+
+            const disponibles = chambres.filter(c => nuits >= c.minNuits);
+            if (disponibles.length === 0) { zone.innerHTML = "<p class='text-center fw-bold text-danger'>Aucune chambre disponible pour ces dates.</p>"; return; }
+
+            disponibles.forEach(ch => {
+                zone.innerHTML += `
+        <div class="col-md-4 mb-4">
+            <div class="card shadow p-3">
+                <img src="${ch.image}" class="room-img w-100 mb-3">
+                <h4>${ch.nom}</h4>
+                <p>${ch.description}</p>
+                <p class="fw-bold">${ch.prix} € / nuit</p>
+                <button class="btn-reserver w-100" onclick="reserver('${ch.nom}',${ch.prix})">Réserver</button>
+            </div>
+        </div>`;
+            });
+        }
+
+        function reserver(type, prix) {
+            const debut = document.getElementById("dateArrivee").value;
+            const fin = document.getElementById("dateDepart").value;
+            const nuits = (new Date(fin) - new Date(debut)) / (1000 * 3600 * 24);
+            const total = nuits * prix;
+            localStorage.setItem("chambre", type);
+            localStorage.setItem("dates", `du ${debut} au ${fin}`);
+            localStorage.setItem("total", total);
+            window.location.href = "paiement.html";
+        }
+    </script>
+
+</body>
+
+</html>

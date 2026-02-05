@@ -1,0 +1,71 @@
+### 1. CRÉER UN UTILISATEUR (À faire en premier)
+POST http://127.0.0.1:8000/api/users
+Content-Type: application/ld+json
+
+{
+    "email": "test3@example.com",
+    "password": "password123"
+}
+
+###
+
+### 2. CRÉER UN ANNIVERSAIRE (Lien avec l'User 1)
+POST http://127.0.0.1:8000/api/birthdays
+Content-Type: application/ld+json
+
+{
+    "firstname": "Jean-Paul",
+    "date": "1988-12-01",
+    "owner": "/api/users/1"
+}
+
+###
+
+### 3. CRÉER UN AUTRE ANNIVERSAIRE (Lien avec l'User 1)
+POST http://127.0.0.1:8000/api/birthdays
+Content-Type: application/ld+json
+
+{
+    "firstname": "Marie",
+    "date": "1995-05-20",
+    "owner": "/api/users/1"
+}
+
+###
+
+### 4. CRÉER UN ANNIVERSAIRE (Lien avec l'User 3)
+POST http://127.0.0.1:8000/api/birthdays
+Content-Type: application/ld+json
+
+{
+    "firstname": "Lucas",
+    "date": "2010-11-12",
+    "owner": "/api/users/3"
+}
+
+###
+
+### 5. VOIR TOUS LES ANNIVERSAIRES
+GET http://127.0.0.1:8000/api/birthdays
+Accept: application/ld+json
+
+###
+
+### 6. VOIR TOUS LES UTILISATEURS (Avec leurs anniversaires détaillés)
+GET http://127.0.0.1:8000/api/users
+Accept: application/ld+json
+
+###
+
+### 7. MODIFIER UN ANNIVERSAIRE (Ex: changer le prénom de l'ID 1)
+PATCH http://127.0.0.1:8000/api/birthdays/1
+Content-Type: application/merge-patch+json
+
+{
+    "firstname": "Jean-Paul II"
+}
+
+###
+
+### 8. SUPPRIMER UN ANNIVERSAIRE (Ex: supprimer l'ID 1)
+DELETE http://127.0.0.1:8000/api/birthdays/1

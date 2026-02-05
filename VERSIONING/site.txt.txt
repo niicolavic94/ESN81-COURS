@@ -1,0 +1,156 @@
+https://sharemycode.fr/ae5
+
+Mise à jour du système possible :
+sudo apt update && sudo apt upgrade -y
+___________________________________________________________________
+
+Gestion de services :
+
+sudo systemctl status apache2
+
+« Montre-moi si Apache est en train de fonctionner. »
+Ce que ça affiche :
+•	active (running) = Apache tourne
+•	inactive / dead = Apache est arrêté
+•	failed = Apache a planté
+
+sudo systemctl restart apache2
+
+« Redémarre Apache maintenant. »
+C’est la commande que tu utilises quand :
+•	tu modifies un VirtualHost
+•	tu changes un fichier de configuration
+•	Apache bug
+•	un site ne s’affiche plus
+
+sudo systemctl stop apache2
+« Arrête complètement Apache. »
+Tu l’utilises quand :
+•	tu veux désactiver temporairement le serveur
+•	tu veux tester qu’un port est libre
+•	tu veux couper le service volontairement
+
+sudo systemctl start apache2
+« Démarre Apache. »
+Tu l’utilises :
+•	après avoir fait un stop
+•	après une mise à jour
+•	quand Apache ne s’est pas lancé automatiquement
+Tu dis la phrase clé :
+« Apache est un service. Quand ça bug, on fait un restart. »
+
+
+___________________________________________________________________
+
+LES DOSSIER RACINE DU SYSTEME LINUX : 
+
+•	/home → dossier utilisateur
+•	/etc → configurations
+•	/var → données variables
+•	/var/www → nos futurs sites web
+•	/usr → programmes installés
+•	/bin → commandes essentielles
+•	/bin
+•	Les commandes de base (ls, cp, mv…)
+•	 /etc
+•	Les fichiers de configuration du système
+(Important pour Apache, MySQL, PHP, etc.)
+•	 /home
+•	Les dossiers des utilisateurs
+(ex : /home/alex)
+•	 /var  Les données variables (logs, sites web, fichiers temporaires)
+C’est ici qu’on trouve :
+/var/www (nos sites web)
+•	/usr
+•	Programmes installés + librairies
+•	 /dev
+•	Les périphériques (disque, USB…)
+•	/tmp
+•	Dossier temporaire
+•	/root
+•	Le dossier de l'utilisateur root (super administrateur)
+
+___________________________________________________________________
+
+phrase simple :
+•	ls = liste
+•	cd = entrer
+•	mkdir = créer un dossier
+•	nano = éditeur de texte
+•	cat = afficher un fichier
+
+___________________________________________________________________
+
+
+Raccourci pour nano : 
+•	^O = CTRL + O = enregistrer
+•	^X = CTRL + X = quitter
+•	^W = CTRL + W = rechercher
+•	^K = CTRL + K = couper une ligne
+•	^U = CTRL + U = coller
+
+___________________________________________________________________
+
+CHMOD : 
+
+Les chiffres de chmod contrôlent qui peut lire, écrire ou exécuter un fichier.
+4 = lire
+2 = écrire
+1 = exécuter
+On additionne :
+Il sert à dire qui peut faire quoi :
+•	r = lire (read)
+•	w = écrire (write)
+•	x = exécuter (execute)
+7 = rwx
+6 = rw
+5 = r-x
+4 = r
+
+___________________________________________________________________
+
+notepad C:\Windows\System32\drivers\etc\hosts
+
+___________________________________________________________________
+
+VIRTUAL HOST :
+
+<VirtualHost *:80>
+    ServerName monsite.local
+    DocumentRoot /var/www/monsite
+</VirtualHost>
+___________________________________________________________________
+
+POUR ACTIVER UN SITE :
+
+sudo a2ensite monsite.conf
+sudo systemctl reload apache2
+
+___________________________________________________________________
+
+nano /var/www/monsite/index.html
+
+SI LE SITE NE S'AFFICHE PAS :
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mon site</title>
+</head>
+<body>
+    <h1>Bienvenue sur mon premier site hébergé</h1>
+</body>
+</html>
+
+___________________________________________________________________
+
+127.0.0.1 monsite.local
+
+___________________________________________________________________
+
+netsh advfirewall firewall add rule name="ApacheWSL" dir=in action=allow protocol=TCP localport=80
+
+___________________________________________________________________
+
+sudo nano /etc/apache2/sites-available/monsite.conf

@@ -1,0 +1,10 @@
+Installation projet Symfony - api	 
+Initalisation du dépôt Git
+Création d'un repository Github - api-birthday
+Création de l'entité "birthday" (bin/console make:entity)
+CRUD sur l'entité birthday
+Se documenter sur l'authentification, fonctionnement
+Inscription, création entité User (bin/console make:user)
+Login (JWT)
+Autorisation (permissions)
+

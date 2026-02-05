@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+body {
+    background-color: #328f8a;
+    background-image: linear-gradient(45deg, #328f8a, #08ac4b);
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+}
+
+.login-page {
+    background: #FFFFFF;
+    margin: 8% auto 100px; 
+    max-width: 270px; 
+    padding: 15px 45px 20px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+.login-page h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.login-page p {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #328f8a;
+    background-image: linear-gradient(45deg, #328f8a, #08ac4b);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-image: linear-gradient(135deg, #328f8a, #08ac4b);
+}
+
+form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-page {
+        
+        max-width: 450px; 
+  
+        margin: 10% auto 50px; 
+  
+        padding: 30px 40px;
+       
+        font-size: 16px;
+    }
+
+    .login-page h2 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+       
+        padding: 0;
+        margin: 0;
+    }
+
+    .login-page {
+
+        max-width: 100%; 
+        width: 100%;
+        margin: 15% auto; 
+        box-shadow: none;
+        padding: 40px 5%;
+        box-sizing: border-box; 
+    }
+}
